@@ -1,1 +1,33 @@
-<p>login works!</p>
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="loginForm">
+    <img class="mb-1" src="../../../assets/img/logo.png" alt="Logo" width="150">
+    <h2 class="h2 mb-2 fw-normal">EtecBook</h2>
+    <h5 class="mb-3 fw-normal">Sua vida escolar, mais conectada!</h5>
+
+    <div class="form-floating mb-2">
+      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email">
+      <label for="email"><i class='bx bxs-user'></i> Email ou Nome de Usuário</label>
+    </div>
+
+    <div class="form-floating">
+      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Senha">
+      <label for="password"><i class='bx bxs-lock'></i> Senha</label>
+    </div>
+
+    <div class="checkbox my-2 text-start">
+      <label>
+        <input type="checkbox" value="remember-me"> Manter Conectado?
+      </label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Entrar</button>
+
+    <a class="forgetPass" routerLink="/forget">Esqueceu a Senha?</a>
+
+    <div class="border-text"></div>
+
+    <a routerLink="/register" class="w-100 btn btn-lg btn-success">Criar Conta</a>
+
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+  </form>
+</main>

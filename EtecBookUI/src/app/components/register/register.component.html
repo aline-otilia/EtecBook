@@ -1,1 +1,30 @@
-<p>register works!</p>
+<main class="form-signin w-100 m-auto">
+    <form>
+        <img class="mb-1" src="../../../assets/img/logo.png" alt="Logo" width="150">
+        <h2 class="h2 mb-2 fw-normal">EtecBook</h2>
+        <h5 class="mb-3 fw-normal">Criar sua Conta!</h5>
+
+        <div class="form-floating mb-2">
+            <input type="text" class="form-control" id="name" placeholder="Nome">
+            <label for="name"><i class='bx bxs-user'></i> Nome</label>
+        </div>
+
+        <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+            <label for="email"><i class='bx bxs-envelope'></i> Email</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Senha">
+            <label for="password"><i class='bx bxs-lock'></i> Senha</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-success my-2" type="submit">Criar Conta</button>
+
+        <div class="border-text"></div>
+
+        <a routerLink="/login" class="w-100 btn btn-lg btn-primary ">Entrar</a>
+
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+    </form>
+</main>
