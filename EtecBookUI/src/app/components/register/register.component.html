@@ -1,25 +1,34 @@
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form [formGroup]="registerForm">
         <img class="mb-1" src="../../../assets/img/logo.png" alt="Logo" width="150">
         <h2 class="h2 mb-2 fw-normal">EtecBook</h2>
         <h5 class="mb-3 fw-normal">Criar sua Conta!</h5>
 
         <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="name" placeholder="Nome">
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome"
+                [class.is-invalid]="checkName()">
             <label for="name"><i class='bx bxs-user'></i> Nome</label>
+            <span *ngIf="checkName()" class="text-danger text-start d-block mt-1">*Campo obrigatório</span>
         </div>
 
         <div class="form-floating mb-2">
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email"
+                [class.is-invalid]="checkEmail() || checkEmailValid()">
             <label for="email"><i class='bx bxs-envelope'></i> Email</label>
+            <span *ngIf="checkEmail()" class="text-danger text-start d-block mt-1">*Campo Obrigatório</span>
+            <span *ngIf="checkEmailValid()" class="text-danger text-start d-block mt-1">*Informe um Email Válido</span>
         </div>
 
         <div class="form-floating">
-            <input type="password" class="form-control" id="password" placeholder="Senha">
+            <input formControlName="password" type="password" class="form-control" id="password" placeholder="Senha"
+                [class.is-invalid]="checkPassword() || checkPasswordLength()">
             <label for="password"><i class='bx bxs-lock'></i> Senha</label>
+            <span *ngIf="checkPassword()" class="text-danger text-start d-block mt-1">*Campo Obrigatório</span>
+            <span *ngIf="checkPasswordLength()" class="text-danger text-start d-block mt-1">*Digite pelo menos 6
+                caracteres</span>
         </div>
 
-        <button class="w-100 btn btn-lg btn-success my-2" type="submit">Criar Conta</button>
+        <button (click)="onSubmit()" class="w-100 btn btn-lg btn-success my-2" type="submit">Criar Conta</button>
 
         <div class="border-text"></div>
 

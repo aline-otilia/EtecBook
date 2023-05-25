@@ -5,13 +5,17 @@
     <h5 class="mb-3 fw-normal">Sua vida escolar, mais conectada!</h5>
 
     <div class="form-floating mb-2">
-      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email">
+      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email"
+        [class.is-invalid]="checkEmail()">
       <label for="email"><i class='bx bxs-user'></i> Email ou Nome de Usuário</label>
+      <span *ngIf="checkEmail()" class="text-danger text-start d-block mt-1">*Campo Obrigatório</span>
     </div>
 
     <div class="form-floating">
-      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Senha">
+      <input formControlName="password" type="password" class="form-control" id="password" placeholder="Senha"
+        [class.is-invalid]="checkPassword()">
       <label for="password"><i class='bx bxs-lock'></i> Senha</label>
+      <span *ngIf="checkPassword()" class="text-danger text-start d-block mt-1">*Campo Obrigatório</span>
     </div>
 
     <div class="checkbox my-2 text-start">
@@ -20,7 +24,8 @@
       </label>
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Entrar</button>
+    <!-- [disabled]="loginForm.invalid"-->
+    <button (click)="onSubmit()" class="w-100 btn btn-lg btn-primary mb-2" type="submit">Entrar</button>
 
     <a class="forgetPass" routerLink="/forget">Esqueceu a Senha?</a>
 
